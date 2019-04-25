@@ -1,0 +1,14 @@
+<div class='receipt-container'>
+  <span class='receipt-header'>Receipt</span>
+  <li *ngFor="let bagel of bagels">
+    <div>
+        <p>{{bagel.name}}</p>
+        <p *ngIf='bagel.appleJelly'>+Apple Jelly</p>
+        <p *ngIf='bagel.grapeJelly'>+Grape Jelly</p>
+        <p *ngIf='bagel.butter'>+Butter</p>
+
+    </div>
+  </li>
+</div>
+
+<button routerLink="/success-screen">Finish Order</button>

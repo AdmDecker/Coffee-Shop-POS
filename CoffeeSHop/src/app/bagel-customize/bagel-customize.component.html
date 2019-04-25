@@ -1,0 +1,18 @@
+<div class='customize-container'>
+  <span> {{headerText}} </span>
+  <div class='addon-selection-container'>
+    <div class='addon-selector'>
+      <mat-checkbox (click)='toggleGrapeJelly()'>Grape Jelly</mat-checkbox>
+    </div>
+    <div class='addon-selector'>
+        <mat-checkbox (click)='toggleAppleJelly()'>Apple Jelly</mat-checkbox>
+    </div>
+    <div class='addon-selector'>
+        <mat-checkbox (click)='toggleButter()'>Butter</mat-checkbox>
+    </div>
+  </div>
+  <div class='nav-container'>
+    <button mat-raised-button routerLink='/'>Bagel Selection</button>
+    <button mat-raised-button (click)='addToCart()'>Add To Cart</button>
+  </div>
+</div>
