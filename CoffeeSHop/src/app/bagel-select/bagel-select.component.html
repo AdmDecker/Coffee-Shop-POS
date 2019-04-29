@@ -1,4 +1,16 @@
-<li *ngFor="let bagel of bagels">
-  <app-bagel [bagel]="bagel"></app-bagel>
-</li>
-<button routerLink="/cart">Cart</button>
+<div class='bagel-select-container'>
+  <h3 class="text-center">Select A Bagel</h3>
+  <div class="list-group">
+    <li *ngFor="let bagel of bagels">
+      <app-bagel [bagel]="bagel"></app-bagel>
+    </li>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm text-center">
+      <button class="btn btn-primary btn-lg center-block" style="width: 80%" routerLink="/cart">View Cart</button>
+    </div>
+  </div>
+</div>
+
+

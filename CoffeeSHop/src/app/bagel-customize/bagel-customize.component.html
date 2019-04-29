@@ -1,6 +1,9 @@
 <div class='customize-container'>
-  <span> {{headerText}} </span>
+  <h3 class="text-center"> Select Smear for {{headerText}} bagel</h3>
   <div class='addon-selection-container'>
+    <div class='addon-selector'>
+      <mat-checkbox (click)='toggleCreamCheese()'>Cream Cheese</mat-checkbox>
+    </div>
     <div class='addon-selector'>
       <mat-checkbox (click)='toggleGrapeJelly()'>Grape Jelly</mat-checkbox>
     </div>
@@ -11,8 +14,12 @@
         <mat-checkbox (click)='toggleButter()'>Butter</mat-checkbox>
     </div>
   </div>
-  <div class='nav-container'>
-    <button mat-raised-button routerLink='/'>Bagel Selection</button>
-    <button mat-raised-button (click)='addToCart()'>Add To Cart</button>
-  </div>
+  <div class="row nav-container">
+      <div class="col-sm text-center">
+        <button class="btn btn-danger btn-lg center-block w-100" routerLink='/'>Back</button>
+      </div>
+      <div class="col-sm text-center">
+        <button class="btn btn-primary btn-lg center-block w-100" (click)='addToCart()'>Add To Cart</button>
+      </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSingleton } from '../data-singleton';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bagel-customize',
@@ -9,11 +10,15 @@ import { DataSingleton } from '../data-singleton';
 export class BagelCustomizeComponent implements OnInit {
   headerText: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.headerText = DataSingleton.selectedBagel.name;
    }
 
   ngOnInit() {
+  }
+
+  toggleCreamCheese(){
+    DataSingleton.selectedBagel.creamCheese = !DataSingleton.selectedBagel.creamCheese;
   }
 
   toggleGrapeJelly() {
@@ -31,6 +36,7 @@ export class BagelCustomizeComponent implements OnInit {
   addToCart() {
     const clone = Object.create(DataSingleton.selectedBagel);
     DataSingleton.cart.push(DataSingleton.selectedBagel);
-    console.log('adding item');
+    console.log('added item');
+    this.router.navigate(['/']);
   }
 }

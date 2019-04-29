@@ -5,6 +5,7 @@ export class Bagel {
   }
 
   name: string;
+  creamCheese = false;
   grapeJelly = false;
   appleJelly = false;
   butter = false;
