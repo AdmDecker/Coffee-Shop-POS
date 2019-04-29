@@ -11,10 +11,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { BagelCustomizeComponent } from './bagel-customize/bagel-customize.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const appRoutes: Routes = [
   { path: '', component: BagelSelectComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'bagel', component: BagelComponent },
   { path: 'success-screen', component: SuccessScreenComponent },
   { path: 'bagel-customize', component: BagelCustomizeComponent },
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     BagelComponent,
     CartComponent,
     SuccessScreenComponent,
-    BagelCustomizeComponent
+    BagelCustomizeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -17,4 +17,11 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeFromCart(removedBagel: Bagel){
+    console.log(removedBagel);
+    const index = DataSingleton.cart.indexOf(removedBagel, 0);
+    if(index > -1){
+      DataSingleton.cart.splice(index, 1);
+    }
+  }
 }

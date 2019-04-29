@@ -1,0 +1,58 @@
+<div class="checkout-container">
+  <h3 class="text-center">Receipt</h3>
+  <div class="row">
+    <div class="col-6">
+      <li *ngFor="let bagel of bagels">
+          <div class="list-group">
+            <div class="list-group-item">
+              <div class="row">
+                <div class="col-6">{{bagel.name}}</div>
+              </div>
+                <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese</p>
+                <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly</p>
+                <p class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly</p>
+                <p class="addon" *ngIf='bagel.butter'>+Butter</p>
+            </div>
+          </div>
+        </li>
+    </div>
+    <div class="col-6">
+      <div class="list-group">
+          <div class="list-group-item">
+            <form>
+                <div class="form-group">
+                  <label>First</label>
+                  <input type="text" class="form-control" id="first">
+                </div>
+                <div class="form-group">
+                  <label>Second</label>
+                  <input type="text" class="form-control" id="second">
+                </div>
+                <div class="form-group">
+                  <label>CCN</label>
+                  <input type="number" class="form-control" id="ccn">
+                </div>
+                <div class="form-group">
+                  <label>CCV</label>
+                  <input type="number" class="form-control" id="ccv">
+                </div>
+                <div class="form-group">
+                  <label>Exp</label>
+                  <input type="date" class="form-control" id="exp">
+                </div>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm text-center">
+      <button class="btn btn-danger btn-lg center-block w-100" routerLink='/'>Back</button>
+    </div>
+    <div class="col-sm text-center">
+      <button class="btn btn-primary btn-lg center-block w-100" routerLink="/success-screen">Complete Order</button>
+    </div>
+  </div>
+</div>
+
