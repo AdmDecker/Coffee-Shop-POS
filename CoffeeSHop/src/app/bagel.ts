@@ -4,6 +4,11 @@ export class Bagel {
     this.price = price;
   }
 
+  readonly creamCheesePrice = 0.50;
+  readonly grapeJellyPrice = 0.75;
+  readonly appleJellyPrice = 0.75;
+  readonly butterPrice = 0.50;
+
   name: string;
   creamCheese = false;
   grapeJelly = false;
@@ -13,17 +18,17 @@ export class Bagel {
 
   getTotalPrice(): number {
     let totalPrice = this.price;
-    if(this.creamCheese){
-      totalPrice += .50;
+    if (this.creamCheese) {
+      totalPrice += this.creamCheesePrice;
     }
-    else if(this.grapeJelly){
-      totalPrice += .75;
+    if (this.grapeJelly) {
+      totalPrice += this.grapeJellyPrice;
     }
-    else if(this.appleJelly){
-      totalPrice += .75;
+    if (this.appleJelly) {
+      totalPrice += this.appleJellyPrice;
     }
-    else if(this.price){
-      totalPrice += .50;
+    if (this.butter) {
+      totalPrice += this.butterPrice;
     }
     return totalPrice;
   }

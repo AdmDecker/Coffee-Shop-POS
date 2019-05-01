@@ -11,7 +11,7 @@
               <li *ngFor="let bagel of bagels">
                   <div class="row">
                     <div class="col-6">{{bagel.name}}</div>
-                    <div class="col-6">${{bagel.price}}</div>
+                    <div class="col-6">${{bagel.getTotalPrice()}}</div>
                   </div>
                     <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese</p>
                     <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly</p>

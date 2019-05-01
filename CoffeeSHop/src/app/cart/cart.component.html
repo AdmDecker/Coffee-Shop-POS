@@ -4,15 +4,15 @@
     <div class="list-group">
       <div class="list-group-item">
         <div class="row">
-          <div class="col-6">{{bagel.name}}</div>
+          <div class="col-6">{{bagel.name}} - ${{bagel.price}}</div>
           <div class="col-6">
             <button class="btn btn-danger w-100" (click)='removeFromCart(bagel)'>Remove</button>
           </div>
         </div>
-          <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese</p>
-          <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly</p>
-          <p class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly</p>
-          <p class="addon" *ngIf='bagel.butter'>+Butter</p>
+          <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese - $0.50</p>
+          <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly - $0.75</p>
+          <p class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly - $0.75</p>
+          <p class="addon" *ngIf='bagel.butter'>+Butter - $0.50</p>
         </div>
       </div>
     </li>
