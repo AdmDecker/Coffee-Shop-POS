@@ -10,11 +10,11 @@ import { Bagel } from '../bagel';
 export class BagelSelectComponent implements OnInit {
 
   bagels = [
-    new Bagel('Whole Wheat', 12.00),
-    new Bagel('White', 11.00),
-    new Bagel('Poppy Seed', 12.00),
-    new Bagel('Pumpkin', 13.00),
-    new Bagel('Cinnamon', 14.00),
+    new Bagel('Whole Wheat', 3.50),
+    new Bagel('White', 4.00),
+    new Bagel('Poppy Seed', 4.00),
+    new Bagel('Pumpkin', 5.00),
+    new Bagel('Cinnamon', 5.00),
   ];
 
   constructor() { }

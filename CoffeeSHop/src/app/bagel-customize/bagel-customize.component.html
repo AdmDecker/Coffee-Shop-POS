@@ -2,16 +2,16 @@
   <h3 class="text-center"> Select Smear for {{headerText}} bagel</h3>
   <div class='md-padding addon-selection-container'>
     <div class='addon-selector'>
-      <mat-checkbox (click)='toggleCreamCheese()'>Cream Cheese - $0.50</mat-checkbox>
+      <mat-checkbox (click)='toggleCreamCheese()'>Cream Cheese - ${{bagel.creamCheesePrice.toFixed(2)}}</mat-checkbox>
     </div>
     <div class='addon-selector'>
-      <mat-checkbox (click)='toggleGrapeJelly()'>Grape Jelly - $0.75</mat-checkbox>
+      <mat-checkbox (click)='toggleGrapeJelly()'>Grape Jelly - ${{bagel.grapeJellyPrice.toFixed(2)}}</mat-checkbox>
     </div>
     <div class='addon-selector'>
-        <mat-checkbox (click)='toggleAppleJelly()'>Apple Jelly - $0.75</mat-checkbox>
+        <mat-checkbox (click)='toggleAppleJelly()'>Apple Jelly - ${{bagel.appleJellyPrice.toFixed(2)}}</mat-checkbox>
     </div>
     <div class='addon-selector'>
-        <mat-checkbox (click)='toggleButter()'>Butter - $0.50</mat-checkbox>
+        <mat-checkbox (click)='toggleButter()'>Butter - ${{bagel.butterPrice.toFixed(2)}}</mat-checkbox>
     </div>
     <div class='separator'></div>
   </div>

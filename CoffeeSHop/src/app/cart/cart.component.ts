@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(removedBagel: Bagel){
-    console.log(removedBagel);
+    //console.log(removedBagel);
     const index = DataSingleton.cart.indexOf(removedBagel, 0);
     if(index > -1){
       DataSingleton.cart.splice(index, 1);

@@ -15,12 +15,12 @@
     <div class="list-group">
       <div class="list-group-item">
         <div class="row">
-          <div class="col-4">{{bagel.name}} - ${{bagel.price}}</div>
+          <div class="col-4">{{bagel.name}} - ${{bagel.price.toFixed(2)}}</div>
           <div class="col-4">
-            <li *ngIf='bagel.creamCheese'>+Cream Cheese - $0.50</li>
-            <li *ngIf='bagel.appleJelly'>+Apple Jelly - $0.75</li>
-            <li *ngIf='bagel.grapeJelly'>+Grape Jelly - $0.75</li>
-            <li *ngIf='bagel.butter'>+Butter - $0.50</li>
+            <li *ngIf='bagel.creamCheese'>+Cream Cheese - ${{bagel.creamCheesePrice.toFixed(2)}}</li>
+            <li *ngIf='bagel.appleJelly'>+Apple Jelly - ${{bagel.grapeJellyPrice.toFixed(2)}}</li>
+            <li *ngIf='bagel.grapeJelly'>+Grape Jelly - ${{bagel.appleJellyPrice.toFixed(2)}}</li>
+            <li *ngIf='bagel.butter'>+Butter - ${{bagel.butterPrice.toFixed(2)}}</li>
           </div>
           <div class="col-4">
             <button class="btn btn-danger w-100" (click)='removeFromCart(bagel)'>Remove</button>

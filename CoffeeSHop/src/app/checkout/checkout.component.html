@@ -18,7 +18,7 @@
                       <li class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly</li>
                       <li class="addon" *ngIf='bagel.butter'>+Butter</li>
                   </div>
-                  <div class="col-4">${{bagel.getTotalPrice()}}</div>
+                  <div class="col-4">${{bagel.getTotalPrice().toFixed(2)}}</div>
                 </div>
                 <hr>
               </li>

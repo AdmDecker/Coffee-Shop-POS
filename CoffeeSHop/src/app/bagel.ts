@@ -4,10 +4,10 @@ export class Bagel {
     this.price = price;
   }
 
-  readonly creamCheesePrice = 0.50;
-  readonly grapeJellyPrice = 0.75;
-  readonly appleJellyPrice = 0.75;
-  readonly butterPrice = 0.50;
+  public readonly creamCheesePrice = 0.50;
+  public readonly grapeJellyPrice = 0.75;
+  public readonly appleJellyPrice = 0.75;
+  public readonly butterPrice = 0.50;
 
   name: string;
   creamCheese = false;
