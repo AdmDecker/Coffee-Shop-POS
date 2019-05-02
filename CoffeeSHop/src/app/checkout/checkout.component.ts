@@ -14,6 +14,7 @@ export class CheckoutComponent implements OnInit {
   tip: number;
   viewableTip: string;
   totalWithTip: string;
+  IsCredit: boolean;
   
   constructor(private router: Router) { 
     this.bagels = DataSingleton.cart;
@@ -21,11 +22,10 @@ export class CheckoutComponent implements OnInit {
     let i = 0;
     for(i = 0; i < this.bagels.length; i++){
       this.total += this.bagels[i].getTotalPrice();
-      console.log(this.bagels[i].getTotalPrice());
-      console.log(this.total);
     }
     this.tip = 0;
     this.totalWithTip = this.total.toFixed(2);
+    this.IsCredit = true;
   }
 
   calcTip(amount){
@@ -37,6 +37,14 @@ export class CheckoutComponent implements OnInit {
   checkout(){
     DataSingleton.cart = Array<Bagel>();
     this.router.navigate(['/success-screen']);
+  }
+
+  SetCredit(){
+    this.IsCredit = true;
+  }
+
+  SetCash(){
+    this.IsCredit = false;
   }
 
   ngOnInit() {

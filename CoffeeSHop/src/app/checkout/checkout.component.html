@@ -5,19 +5,23 @@
       <div class="list-group">
           <div class="list-group-item">
               <div class="row">
-                  <div class="col-6">Bagels</div>
-                  <div class="col-6">Price</div>
+                  <div class="col-4">Bagels</div>
+                  <div class="col-4">Smears</div>
+                  <div class="col-4">Price</div>
                 </div>
               <li *ngFor="let bagel of bagels">
                   <div class="row">
-                    <div class="col-6">{{bagel.name}}</div>
-                    <div class="col-6">${{bagel.getTotalPrice()}}</div>
+                    <div class="col-4">{{bagel.name}}</div>
+                    <div class="col-4">
+                      <li class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese</li>
+                      <li class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly</li>
+                      <li class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly</li>
+                      <li class="addon" *ngIf='bagel.butter'>+Butter</li>
                   </div>
-                    <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese</p>
-                    <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly</p>
-                    <p class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly</p>
-                    <p class="addon" *ngIf='bagel.butter'>+Butter</p>
-                </li>
+                  <div class="col-4">${{bagel.getTotalPrice()}}</div>
+                </div>
+                <hr>
+              </li>
           </div>
           <div class="list-group-item">
               <div class="row">
@@ -34,7 +38,29 @@
       </div>
     </div>
     <div class="col-6">
-      <div class="list-group">
+      <div class="row">
+          <div class="col-12">
+              <div class="list-group">
+                  <div class="list-group-item">
+                    <h4>Choose Payment Type:</h4>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cashCredit" (click)='SetCredit()' checked>
+                        <label class="form-check-label" for="cashCredit" checked>
+                          Credit
+                        </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" (click)='SetCash()' name="cashCredit">
+                        <label class="form-check-label" for="cashCredit">
+                          Cash
+                        </label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div *ngIf='IsCredit' class="list-group">
           <div class="list-group-item">
             <form>
                 <div class="form-group">

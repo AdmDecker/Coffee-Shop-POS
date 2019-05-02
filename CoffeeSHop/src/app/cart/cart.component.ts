@@ -9,9 +9,16 @@ import { DataSingleton } from '../data-singleton';
 })
 export class CartComponent implements OnInit {
   bagels: Bagel[];
+  HasOrders: boolean;
 
   constructor() {
     this.bagels = DataSingleton.cart;
+    if(this.bagels.length == 0){
+      this.HasOrders = false;
+    }
+    else{
+      this.HasOrders = true;
+    }
   }
 
   ngOnInit() {
@@ -22,6 +29,12 @@ export class CartComponent implements OnInit {
     const index = DataSingleton.cart.indexOf(removedBagel, 0);
     if(index > -1){
       DataSingleton.cart.splice(index, 1);
+    }
+    if(this.bagels.length == 0){
+      this.HasOrders = false;
+    }
+    else{
+      this.HasOrders = true;
     }
   }
 }

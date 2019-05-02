@@ -1,27 +1,40 @@
 <div class='receipt-container'>
   <h3 class="text-center">Cart</h3>
+  <div class="row">
+      <div class="col-4">Bagel</div>
+      <div class="col-4">Smear</div>
+  </div>
+  <div *ngIf='!HasOrders'>
+      <div class="list-group">
+          <div class="list-group-item text-center">
+            <h4>Empty</h4>
+          </div>
+      </div>
+  </div>
   <li *ngFor="let bagel of bagels">
     <div class="list-group">
       <div class="list-group-item">
         <div class="row">
-          <div class="col-6">{{bagel.name}} - ${{bagel.price}}</div>
-          <div class="col-6">
+          <div class="col-4">{{bagel.name}} - ${{bagel.price}}</div>
+          <div class="col-4">
+            <li *ngIf='bagel.creamCheese'>+Cream Cheese - $0.50</li>
+            <li *ngIf='bagel.appleJelly'>+Apple Jelly - $0.75</li>
+            <li *ngIf='bagel.grapeJelly'>+Grape Jelly - $0.75</li>
+            <li *ngIf='bagel.butter'>+Butter - $0.50</li>
+          </div>
+          <div class="col-4">
             <button class="btn btn-danger w-100" (click)='removeFromCart(bagel)'>Remove</button>
           </div>
         </div>
-          <p class="addon" *ngIf='bagel.creamCheese'>+Cream Cheese - $0.50</p>
-          <p class="addon" *ngIf='bagel.appleJelly'>+Apple Jelly - $0.75</p>
-          <p class="addon" *ngIf='bagel.grapeJelly'>+Grape Jelly - $0.75</p>
-          <p class="addon" *ngIf='bagel.butter'>+Butter - $0.50</p>
-        </div>
       </div>
-    </li>
+    </div>
+  </li>
   <br>
   <div class="row">
     <div class="col-sm text-center">
       <button class="btn btn-danger btn-lg center-block w-100" routerLink='/'>Back</button>
     </div>
-    <div class="col-sm text-center">
+    <div *ngIf='HasOrders' class="col-sm text-center">
       <button class="btn btn-primary btn-lg center-block w-100" routerLink="/checkout">Checkout</button>
     </div>
   </div>
